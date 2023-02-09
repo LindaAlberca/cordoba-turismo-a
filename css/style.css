@@ -17,13 +17,14 @@
     cursor: pointer;
     animation: scalar 1.5s infinite alternate;
     padding: 10%;
-    /*align-content: center;
+    /*position: relative;
+    align-content: center;
     justify-content: center;
     align-items: center;*/
 }
 
 .carousel-item {
-    height: 743px;
+    /*height: 743px;*/
     width: 100%;
     padding-top: 0%;
     background-position: center;
@@ -65,7 +66,7 @@ body {
 body {
     background-color: hsla(207, 76%, 85%, 0.523);
     margin: 0;
-    margin-top: 1px;
+    margin-top: 0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
 }
@@ -81,8 +82,8 @@ body p {
 /*--------- HEADER ---------*/
 
 h1 {
-    color: rgb(255, 170, 0);
-    font-size: 80px;
+    color: rgb(255, 217, 0);
+    font-size: 50px;
     text-align: center;
     margin-bottom: 50px;
     margin-top: 100px;
@@ -114,13 +115,13 @@ header li {
 
 header ul {
     list-style: none;
-    position: fixed;
+    position: absolute;
     display: flex;
+    /*flex-direction:inherit;*/
     justify-content: center;
     left: 0;
     top: 0;
     right: 0;
-    
 }
 
 header a:-webkit-any-link {
@@ -150,7 +151,7 @@ section h2 {
 
 #contenedor {
     display: flex;
-    position: relative;
+    position: relative;position: relative;
     align-items: center;
     justify-content: center;
 }
@@ -185,7 +186,6 @@ section h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .lugar {
@@ -220,7 +220,6 @@ section h2 {
 }
 
 .lugar-fila {
-    
     margin-left: 200px;
     margin-bottom: 15px;
 }
@@ -231,16 +230,16 @@ section h2 {
     clear: both;
 }
 
-@media screen and (max-width: 780px) {
+/*@media screen and (max-width: 780px) {
     .lugar-columna {
         width: 100%;
         display: block;
         margin-bottom: 20px;
     }
-}
+}*/
 
 
-/*--------- Valles.html (CONTENIDO) ---------*/
+/*--------- Valles.html (TEXTO PARA CADA VALLE) ---------*/
 
 #introduccion1 {   
     display: flex;
@@ -258,7 +257,6 @@ section h2 {
 
 #vinculosValles {
     list-style:none;
-    ;
 }
 
 
@@ -317,21 +315,19 @@ section h2 {
 
 /*------Animation---- ---*/
 
-
 .imagen-lugares:hover {
     transform: scale(1.15);
     /*zoom: 80%;*/
 }
 
 
-/*RESPONSIVOS*/
+/***--------------------------------RESPONSIVOS-----------------------------***/
 
 /*--------- Acomodar a los Dispositipos Celular------*/
 
-@media screen and (min-width:360px) {
+@media (min-width:320px) and (max-width:767px){
     .carousel-caption h1 {
-        color: rgb(255, 217, 0);
-        font-size: 80px;
+        color: rgb(255, 217, 0);        font-size: 25px;
         text-align: center;
         margin-bottom: 50px;
         margin-top: 100px;
@@ -339,8 +335,9 @@ section h2 {
         cursor: pointer;
         animation: escalar 1.5s infinite alternate;
         padding: 10%;
-        
+
     }
+
 
     .gallery-container {
         grid-template-columns: repeat(4, 1fr);
@@ -369,35 +366,147 @@ section h2 {
         grid-column-start: span 4;
     }
 
+    #contenedor {
+        float: left;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
     }
+    
+    .vinculos {
+        background-color: black;
+        margin-top: 10px;
+    }
+
+    .lugar-columna {
+        float: left;
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .lugar-fila {
+        margin-left: 0px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+
+    #columnas {
+        column-count: 2;
+        column-gap: 20px;
+        column-rule: 4px dotted rgb(66, 235, 4);
+    }
+    header li {
+        float: left;
+        margin: 0px;
+        font-size: 15px;
+        padding: 2px;
+        font-weight: bold; 
+    }
+}
 
 
 /*--------- Acomodar a los Dispositipos Tablet------*/
 
-@media screen and (min-width: 780px) {
+@media (min-width: 768px) and (max-width: 1023px){
+
+
+    .carousel-caption h1 {
+        color: rgb(255, 217, 0);
+        font-size: 45px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        filter: brightness(70%);
+        cursor: pointer;
+        animation: escalar 1.5s infinite alternate;
+        padding: 10%;
+    }
 
     .gallery-container {
         grid-template-columns: repeat(4, 1fr);
-    }
-    .gallery-item:nth-child(4) {
-        grid-column-start: span 2;
-    }
-    
-    .gallery-item:nth-child(5) {
-        grid-row-start: span 2;  
+        width: 100%;
+        padding: 10%;
+        justify-content: center;
     }
 
-    .gallery-item:nth-child(6) {
-        grid-column-start: span 2;
+    .gallery-item:nth-child(1) {
+        grid-column-start: span 4;
+    }
+
+    .gallery-item:nth-child(2) {
+        grid-column-start: span 4;
+    }
+
+    .gallery-item:nth-child(3) {
+        grid-column-start: span 4;
+    }
+    
+    .gallery-item:nth-child(4) {
+        grid-column-start: span 4;
+    }
+
+    .gallery-item:nth-child(5) {
+        grid-column-start: span 4;
+        grid-row-start: span 3;
+    }
+
+    #contenedor {
+        float: left;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .vinculos {
+        background-color: black;
+        margin-top: 10px;
+    }
+
+    .lugar-columna {
+        float: left;
+        width: 45%;
+        padding: 10px;
+        margin: 15px;
+    }
+    
+    .lugar-fila {
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    
+
+    #columnas {
+        column-count: 3;
+        column-gap: 20px;
+        column-rule: 4px dotted rgb(66, 235, 4);
     }
 }
 
 
 /*--------- Acomodar a los Dispositipos Notebook------*/
 
-@media screen and (min-width:1040px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .carousel-caption h1 {
+        color: rgb(255, 217, 0);
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        filter: brightness(70%);
+        cursor: pointer;
+        animation: escalar 1.5s infinite alternate;
+        padding: 10%;
+    }
+
     .gallery-container {
         grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        padding: 10%;
+        justify-content: center;
     }
     .gallery-item:nth-child(1) {
         grid-column-start: span 2;
@@ -435,6 +544,135 @@ section h2 {
         grid-column-start: span 2;
         grid-row-start: span 1;
     }
+
+    #contenedor {
+        float: left;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .vinculos {
+        background-color: black;
+        margin-top: 10px;
+    }
+
+    .lugar-columna {
+        float: left;
+        width: 28%;
+        padding: 15px;
+        margin: 15px;
+    }
+    
+    .lugar-fila {
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    
+
+    #columnas {
+        column-count: 3;
+        column-gap: 20px;
+        column-rule: 4px dotted rgb(66, 235, 4);
+    }
+}
+
+
+/*--------- Acomodar a los Dispositipos Notebook (>1440 px, Altas Resoluciones)------*/
+
+    @media screen and (min-width: 1440px) {
+        .carousel-caption h1 {
+            color: rgb(255, 217, 0);
+            font-size: 80px;
+            text-align: center;
+            margin-bottom: 50px; 
+            margin-top: 100px;
+            filter: brightness(70%);
+            cursor: pointer;
+            animation: escalar 1.5s infinite alternate;
+            padding: 10%;
+        }
+    
+        .gallery-container {
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+            padding: 10%;
+            justify-content: center;
+        }
+        .gallery-item:nth-child(1) {
+            grid-column-start: span 2;
+        }
+    
+        .gallery-item:nth-child(2) {
+            grid-column-start: span 2;
+            grid-row-start: span 3;
+        }
+    
+        .gallery-item:nth-child(3) {
+            grid-column-start: span 2;
+        }
+        
+        .gallery-item:nth-child(4) {
+            grid-column-start: span 2;
+        }
+    
+        .gallery-item:nth-child(5) {
+            grid-column-start: span 4;
+            grid-row-start: span 3;
+        }
+    
+        .gallery-item:nth-child(6) {
+            grid-column-start: span 4;
+            grid-row-start: span 3;
+        }
+    
+        .gallery-item:nth-child(7) {
+            grid-column-start: span 2;
+            grid-row-start: span 1;
+        }
+    
+        .gallery-item:nth-child(8) {
+            grid-column-start: span 2;
+            grid-row-start: span 1;
+        }
+    
+        #contenedor {
+            float: left;
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .vinculos {
+            background-color: black;
+            margin-top: 10px;
+        }
+    
+        .lugar-columna {
+            float: left;
+            width: 30%;
+            padding: 15px;
+            margin: 10px;
+        }
+        
+        .lugar-fila {
+            margin-left: 130px;
+            margin-bottom: 15px;
+        }
+        
+        /*.lugar-fila:after {
+            content: "";
+            display: table;
+            clear: both;
+        }*/
+    
+        #columnas {
+            column-count: 3;
+            column-gap: 20px;
+            column-rule: 4px dotted rgb(66, 235, 4);
+        }
 }
 
 
